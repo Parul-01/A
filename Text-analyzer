@@ -1,0 +1,40 @@
+"""
+Text Analyzer - Vowel, Consonant, and Letter Counter
+
+This basic program analyzes a sentence and reports:
+- Number of vowels
+- Number of consonants
+- Total number of letters (vowels + consonants)
+
+Created using basic Python functions. No external modules required.
+"""
+
+# Ask the user for a sentence
+sentence = input('Enter a sentence: ')
+
+# Function to count vowels in the sentence
+def no_of_vowels(x):
+    count = 0
+    for i in x.lower():
+        if i in 'aeiou':
+            count += 1
+    return count
+
+# Function to count consonants in the sentence
+def no_of_consonants(x):
+    count = 0
+    for i in x.lower():
+        if i not in 'aeiou' and i.isalpha():
+            count += 1
+    return count
+
+# Function to calculate total letters (vowels + consonants)
+def letter_count(x):
+    vowels = no_of_vowels(x)
+    consonants = no_of_consonants(x)
+    return vowels + consonants
+
+# Display the results
+print("Vowels:", no_of_vowels(sentence))
+print("Consonants:", no_of_consonants(sentence))
+print("Total Letters:", letter_count(sentence))
